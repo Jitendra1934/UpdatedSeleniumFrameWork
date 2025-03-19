@@ -1,5 +1,6 @@
 package PageObjectModels;
 
+import Base.CommenToAllPages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginPom {
+public class LoginPom extends CommenToAllPages {
 
     WebDriver driver;
 
@@ -24,16 +25,17 @@ public class LoginPom {
 
 
     //PAGE ACTIONs
+
+
     public String vwoLoginInvalid(String name, String pwd){
 
-        driver.findElement(username).sendKeys(name);
-        driver.findElement(password).sendKeys(pwd);
-        driver.findElement(signInButton).click();
-
+        enterInput(username, name);
+        enterInput(password, pwd);
+        clickElement(signInButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(errorTest));
 
-        String errorMsg = driver.findElement(errorTest).getText();
+        String errorMsg = getErrorText(errorTest);
         System.out.println(errorMsg);
         return errorMsg;
     }
