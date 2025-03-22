@@ -1,0 +1,1 @@
+{"uuid":"eb4e624c-f389-4213-a597-e59044c98d67","name":"Basic.CommanToAllTestCases.down","children":["074c3d44-9d9a-4134-bbd9-a4ed8cb476b0"],"description":"","befores":[],"afters":[{"name":"down","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1742620788241,"stop":1742620788242}],"start":1742620788239,"stop":1742620788242}

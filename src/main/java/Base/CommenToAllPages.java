@@ -1,6 +1,12 @@
 package Base;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import static Driver.DriverManager.getDriver;
 
@@ -18,8 +24,35 @@ public class CommenToAllPages {
         getDriver().findElement(by).sendKeys(key);
     }
 
+    //For Page Factory
+    public void enterInput(WebElement by, String key){
+
+       by.sendKeys(key);
+    }
+
+    //Page Factory Method
+    public void clickElement(WebElement by){
+
+        by.click();
+    }
+
     public String getErrorText(By by ){
 
         return getDriver().findElement(by).getText();
+    }
+    public String getErrorText(WebElement by ){
+
+        return by.getText();
+    }
+
+    public void visibilityOfElement(By by){
+
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    }
+
+    public void implicitWait(){
+
+        getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 }
