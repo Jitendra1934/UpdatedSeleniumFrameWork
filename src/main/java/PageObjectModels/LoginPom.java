@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class LoginPom extends CommenToAllPages {
 
-    WebDriver driver;
+    static WebDriver driver;
 
     public LoginPom(WebDriver driver) {
     this.driver=driver;
@@ -29,12 +29,15 @@ public class LoginPom extends CommenToAllPages {
 
     public String vwoLoginInvalid(String name, String pwd){
 
+      //  driver.findElement(username).sendKeys(name);
         enterInput(username, name);
+        //driver.findElement(password).sendKeys(pwd);
         enterInput(password, pwd);
+        //driver.findElement(signInButton).click();
         clickElement(signInButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(errorTest));
-
+        //visibilityOfElement(errorTest);
         String errorMsg = getErrorText(errorTest);
         System.out.println(errorMsg);
         return errorMsg;

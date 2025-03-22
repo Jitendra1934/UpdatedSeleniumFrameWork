@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <listeners>
+        <listener class-name="Listeners.RetryListener"/>
+    </listeners>
+
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/hp/IdeaProjects/UpdatedSeleniumFrameWork/src/test/java/Tests/VwoTests/POM/LoginTestCase.java">
+        <classes>
+            <class name="Tests.VwoTests.POM.LoginTestCase">
+                <methods>
+                    <include name="LoginTestCase"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

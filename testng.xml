@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/hp/IdeaProjects/UpdatedSeleniumFrameWork">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/hp/IdeaProjects/UpdatedSeleniumFrameWork/src/test/java/Tests/VwoTests/PF/PF_LoginPage.java">
         <classes>
-            <class name="Tests.SampleTestCases.SampleRun">
+            <class name="Tests.VwoTests.PF.PF_LoginPage">
                 <methods>
-                    <include name="sampleRun"/>
-                </methods>
-            </class>
-            <class name="Tests.VwoTests.LoginTestCase">
-                <methods>
-                    <include name="vwoLoginTestCase"/>
+                    <include name="pfLogin"/>
                 </methods>
             </class>
         </classes>
