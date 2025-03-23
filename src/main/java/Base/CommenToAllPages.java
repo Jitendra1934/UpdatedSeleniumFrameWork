@@ -24,29 +24,27 @@ public class CommenToAllPages {
         getDriver().findElement(by).sendKeys(key);
     }
 
+    public String getErrorText(By by ){
+
+        return getDriver().findElement(by).getText();
+    }
     //For Page Factory
     public void enterInput(WebElement by, String key){
 
-       by.sendKeys(key);
+        by.sendKeys(key);
     }
-
     //Page Factory Method
     public void clickElement(WebElement by){
 
         by.click();
     }
-
-    public String getErrorText(By by ){
-
-        return getDriver().findElement(by).getText();
-    }
+    //Page Factory Method
     public String getErrorText(WebElement by ){
 
         return by.getText();
     }
 
     public void visibilityOfElement(By by){
-
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(by));
     }
